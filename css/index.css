@@ -87,10 +87,39 @@ p {
 .headerimg{
     padding:20px 0;
 }
+/*Added CSS link animations */
 .top-content .navbar .navlink{
+    position: relative;
+    color: black;
     text-decoration: none;
+}
+.top-content .navbar .navlink:hover{
     color:black;
 }
+
+/*Adds a border and hides it before user hovers */
+.top-content .navbar .navlink:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/*Displays Border and Transforms it by making scaleX visible*/
+.top-content .navbar .navlink:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
 .top-content .text-container {
     width: 48%;
     padding: 0 1%;
